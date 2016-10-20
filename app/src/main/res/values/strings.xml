@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NYTarticles</string>
+    <string name="action_settings">Settings</string>
+    <string name="api_key">api-key</string>
+    <string name="page">page</string>
+    <string name="query">q</string>
+</resources>
