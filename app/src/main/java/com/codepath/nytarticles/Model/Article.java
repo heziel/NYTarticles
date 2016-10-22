@@ -1,4 +1,4 @@
-package com.codepath.nytarticles.Model;
+package com.codepath.nytarticles.model;
 
 import org.json.JSONArray;
 import org.json.JSONException;

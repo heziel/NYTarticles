@@ -4,4 +4,7 @@
     <string name="api_key">api-key</string>
     <string name="page">page</string>
     <string name="query">q</string>
+    <string name="thumnail_prefix">http://nytimes.com/</string>
+    <string name="hello_world">hello world</string>
+    <string name="search">search</string>
 </resources>
