@@ -8,4 +8,12 @@
     <string name="hello_world">hello world</string>
     <string name="search">search</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="begin_date">begin_date</string>
+    <string name="sort_order">sort_order</string>
+    <string name="news_desk_values">news_desk_values</string>
+    <string name="checkbox_arts">checkbox_arts</string>
+    <string name="checkbox_fashion_and_style">checkbox_fasion_and_style</string>
+    <string name="checkbox_sports">checkbox_sports</string>
+    <string name="button_cancel">button_cancel</string>
+    <string name="button_save">button_save</string>
 </resources>

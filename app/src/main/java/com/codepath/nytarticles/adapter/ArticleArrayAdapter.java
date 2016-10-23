@@ -63,12 +63,6 @@ import java.util.List;
                 break;
         }
 
-/*        // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.item_article_results, parent, false);
-
-        // Return a new holder instance
-        ArticleViewHolder viewHolder = new ArticleViewHolder(context,contactView,itemList);
-        */
         return viewHolder;
     }
 
@@ -101,15 +95,6 @@ import java.util.List;
             } else
                 Picasso.with(context).load(R.mipmap.ic_launcher).into(articleViewHolder.getArticleImage());
         }
-
-
-        // Set item views based on your views and data model
-      //  holder.getArticleTitle().setText(itemHeadLine);
-
-        //remote download image in background
-   //     String thumbnail = itemList.get(position).getThumbNail();
-
-
     }
 
     /*
