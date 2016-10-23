@@ -3,20 +3,24 @@ package com.codepath.nytarticles.model;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 
 /**
  * Created by Hezi Eliyahu on 20/10/2016.
  */
-
+@Parcel
 public class Article {
 
     private final static String NYT_URL = "http://nytimes.com/";
 
-    private String webUrl;
-    private String headLine;
-    private String thumbNail;
+    public String webUrl;
+    public String headLine;
+    public String thumbNail;
+
+    // empty constructor needed by the Parceler library
+    public Article(){};
 
     public String getWebUrl() {
         return webUrl;
@@ -32,6 +36,7 @@ public class Article {
 
     // Article constructor
     public Article(JSONObject jsonObject){
+
         try{
             this.webUrl = jsonObject.getString("web_url");
             this.headLine = jsonObject.getJSONObject("headline").getString("main");
@@ -49,7 +54,6 @@ public class Article {
             e.printStackTrace();
         }
     }
-
 
     /*
     * this Method is for parsing all the list of articles

@@ -7,4 +7,5 @@
     <string name="thumnail_prefix">http://nytimes.com/</string>
     <string name="hello_world">hello world</string>
     <string name="search">search</string>
+    <string name="title_activity_detail">DetailActivity</string>
 </resources>
