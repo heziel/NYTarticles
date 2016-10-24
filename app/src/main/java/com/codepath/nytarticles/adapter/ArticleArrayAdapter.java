@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.bumptech.glide.Glide;
 import com.codepath.nytarticles.model.Article;
 import com.codepath.nytarticles.R;
 import com.codepath.nytarticles.viewHolder.ArticleViewHolder;
@@ -12,10 +14,6 @@ import com.codepath.nytarticles.viewHolder.ArticleViewHolderTextOnly;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
-
-/**
- * Created by Hezi Eliyahu on 20/10/2016.
- */
 
  public class ArticleArrayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
 
@@ -89,17 +87,33 @@ import java.util.List;
             //remote download image in background
             String thumbnail = itemList.get(position).getThumbNail();
 
+            // Set the height ratio before loading in image into Picasso
+            articleViewHolder.getArticleImage().setHeightRatio((double)100/(double)100);
+            //        .setHeightRatio(((double)photo.getHeight())/photo.getWidth());
+
             // populate the picture.
-            if (!thumbnail.isEmpty()) {
-                Picasso.with(context).load(thumbnail).into(articleViewHolder.getArticleImage());
-            } else
-                Picasso.with(context).load(R.mipmap.ic_launcher).into(articleViewHolder.getArticleImage());
+            Glide.with(context).load(thumbnail)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .into(articleViewHolder.getArticleImage());
         }
     }
 
-    /*
-    * This method return the item type
-    */
+     // clear recycled items for using Glide
+     @Override
+     public void onViewRecycled(RecyclerView.ViewHolder viewHolder) {
+         int type = viewHolder.getItemViewType();
+         if (type == THUMBNAIL) {
+             ArticleViewHolder holder = (ArticleViewHolder) viewHolder;
+             super.onViewRecycled(holder);
+             Glide.clear(holder.getArticleImage());
+         }
+
+         super.onViewRecycled(viewHolder);
+     }
+
+     /*
+         * This method return the item type
+         */
     @Override
     public int getItemViewType(int position) {
 
@@ -113,4 +127,5 @@ import java.util.List;
     public int getItemCount() {
         return itemList.size();
     }
-}
+
+ }

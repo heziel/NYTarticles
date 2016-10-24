@@ -6,14 +6,17 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     card_view:cardUseCompatPadding="true"
-    card_view:cardCornerRadius="8dp"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:contentPadding="1dp"
     android:layout_marginBottom="16dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
-        <ImageView
+
+        <com.codepath.nytarticles.adapter.DynamicHeightImageView
             android:id="@+id/ivImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -32,6 +35,7 @@
             android:paddingTop="8dp"
             android:gravity="center_horizontal"
             android:layout_alignParentBottom="true"
+
             android:background="#1976D2"/>
 
     </RelativeLayout>

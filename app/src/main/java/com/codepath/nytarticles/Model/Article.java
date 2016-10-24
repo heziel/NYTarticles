@@ -7,9 +7,7 @@ import org.parceler.Parcel;
 
 import java.util.ArrayList;
 
-/**
- * Created by Hezi Eliyahu on 20/10/2016.
- */
+
 @Parcel
 public class Article {
 
